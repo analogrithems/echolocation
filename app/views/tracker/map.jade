@@ -1,0 +1,23 @@
+doctype html
+html
+  include ../includes/trackerHeader
+  body
+    #wrap
+      include ../includes/menu
+      div.container
+        div#tracker
+          div#map-canvas
+        div#request-pickup
+          h2 Request Pickup From This Cab?
+          form(onsubmit='requestPickup' role='form')
+            div.form-group
+              label What are you going?
+              input.form-control(type='email' placeholder='Destination' id="destination")
+              label Phone number to contact you at?
+              input.form-control(type='phone' placeholder='Phone' id="phone")
+              label Notes
+              textarea.form-control(row='3' id='notes')
+              
+              button.btn(onClick='ecoTracker.pickupRequest.requestPickup') Request Cab
+              
+    include ../includes/trackerFooter
